@@ -19,10 +19,12 @@ int Pizza::readPizza(string fileName){
 	for(int i=0; i < rowNumber; i++){
 		string row;
 		getline(inFile,row);
-		vector<char> r;
+		vector<Cell> r;
 		myPizza.push_back(r);
 		for(int j=0; j<colNumber; j++){
-			char cell = row[j];
+			Cell cell;
+			cell.available="true";
+			cell.value = row[j];
 			myPizza[i].push_back(cell);
 		}
 	}
@@ -34,9 +36,19 @@ int Pizza::printPizza(){
 	printf("My pizza!\n");
 	for(int i=0;i<rowNumber;i++){
 		for(int j=0; j<colNumber; j++){
-			cout<<myPizza[i][j];
+			cout<<myPizza[i][j].value;
 		}
 		cout<<endl;
+	}
+	return 0;
+}
+
+//find 2X1 units of (T,M) or (M,T)
+int Pizza::findUnits(){
+	for(int i=0; i<rowNumber; i++){
+		for(int j=0; j<colNumber; j++){
+			
+		}
 	}
 	return 0;
 }
